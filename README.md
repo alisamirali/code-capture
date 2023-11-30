@@ -2,7 +2,7 @@
 
 A fully functional Ray.so clone (a powerful tool for sharing code snippets) with additional features. Share beautiful screenshots of your code on your social media platforms.
 
-**Project live at:** [https://code-ss.pages.dev/](https://code-ss.pages.dev/)
+**Project live at:** [https://code-capture.vercel.app](https://code-capture.vercel.app/)
 
 [![Thumbnail](https://i.ibb.co/XJMbhLG/code-ss-thumbnail.png)](https://youtu.be/F0AfwegcXBY)
 
@@ -12,9 +12,9 @@ A fully functional Ray.so clone (a powerful tool for sharing code snippets) with
 
 - 10+ elegant themes (light + dark theme included).
 - 12+ font styles (popular monospace fonts).
-- Support for all popuplar languages with auto-detection and syntax highlighting.
-- Multiple export options: save as SVG/PNG, copy to clipboard and copy link.
-- Other customization options like: font size, padding, background etc.
+- Support for all popular languages with auto-detection and syntax highlighting.
+- Multiple export options: save as SVG/PNG, copy to clipboard, and copy link.
+- Other customization options like font size, padding, background, etc.
 
 ---
 
@@ -42,7 +42,7 @@ A fully functional Ray.so clone (a powerful tool for sharing code snippets) with
 git clone https://github.com/nimone/code-screenshot && cd code-screenshot
 ```
 
-2. Install project dependecies
+2. Install project dependencies
 
 ```bash
 npm install
