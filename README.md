@@ -34,12 +34,13 @@ A fully functional Ray.so clone (a powerful tool for sharing code snippets) with
 
 ---
 
-## Build steps
+## How to run the project on your device:
 
 1. Clone this repo
 
 ```bash
-git clone https://github.com/nimone/code-screenshot && cd code-screenshot
+https://github.com/alisamirali/code-capture.git
+cd code-capture
 ```
 
 2. Install project dependencies
@@ -48,8 +49,8 @@ git clone https://github.com/nimone/code-screenshot && cd code-screenshot
 npm install
 ```
 
-3. Build the project and start a local server
+3. Run the project
 
 ```bash
-npm run build && npm run serve
+npm run dev
 ```
