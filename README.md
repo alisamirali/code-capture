@@ -2,9 +2,9 @@
 
 A fully functional Ray.so clone (a powerful tool for sharing code snippets) with additional features. Share beautiful screenshots of your code on your social media platforms.
 
-**Project live at:** [https://code-capture.vercel.app](https://code-capture.vercel.app/)
+**Project live at:** [https://code-capture.vercel.app](https://code-capture.vercel.app)
 
-[![Thumbnail](https://i.ibb.co/XJMbhLG/code-ss-thumbnail.png)](https://youtu.be/F0AfwegcXBY)
+[![Thumbnail](https://i.ibb.co/XJMbhLG/code-ss-thumbnail.png)](https://code-capture.vercel.app)
 
 ---
 
@@ -38,19 +38,19 @@ A fully functional Ray.so clone (a powerful tool for sharing code snippets) with
 
 1. Clone this repo
 
-```bash
-https://github.com/alisamirali/code-capture.git
+```
+git clone https://github.com/alisamirali/code-capture.git
 cd code-capture
 ```
 
 2. Install project dependencies
 
-```bash
-npm install
+```
+npm install or npm i
 ```
 
 3. Run the project
 
-```bash
+```
 npm run dev
 ```
