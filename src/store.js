@@ -12,7 +12,7 @@ const useStore = create(
       autoDetectLanguage: true,
       fontSize: 18,
       fontStyle: "jetBrainsMono",
-      padding: 64,
+      padding: 32,
     }),
     {
       name: "user-preferences",
