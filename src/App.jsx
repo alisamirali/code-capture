@@ -59,7 +59,7 @@ function App() {
       <Resizable
         enable={{ left: true, right: true }}
         minWidth={padding * 2 + 200}
-        maxWidth={padding * 2 + 800}
+        maxWidth={padding * 2 + 1000}
         size={{ width }}
         onResize={(e, dir, ref) => setWidth(ref.offsetWidth)}
         onResizeStart={() => setShowWidth(true)}
@@ -103,6 +103,19 @@ function App() {
           <div className="w-px bg-neutral-800" />
           <div className="place-self-center">
             <ExportOptions targetRef={editorRef} />
+          </div>
+          <div className="flex items-center justify-center w-full">
+            <p className="bg-neutral-800 py-1 px-2 text-sm rounded-md">
+              Made with ❤️ by{" "}
+              <a
+                href="https://alisamir.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="underline font-bold"
+              >
+                Ali Samir
+              </a>
+            </p>
           </div>
         </CardContent>
       </Card>

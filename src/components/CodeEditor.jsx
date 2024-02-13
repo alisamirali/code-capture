@@ -1,32 +1,32 @@
-import { cn } from "@/lib/utils"
-import { codeSnippets, fonts } from "@/options"
-import useStore from "@/store"
-import flourite from "flourite"
-import hljs from "highlight.js"
-import { useEffect } from "react"
-import Editor from "react-simple-code-editor"
+import { cn } from "@/lib/utils";
+import { codeSnippets, fonts } from "@/options";
+import useStore from "@/store";
+import flourite from "flourite";
+import hljs from "highlight.js";
+import { useEffect } from "react";
+import Editor from "react-simple-code-editor";
 
 export default function CodeEditor() {
-  const store = useStore()
+  const store = useStore();
 
   useEffect(() => {
     const randomSnippet =
-      codeSnippets[Math.floor(Math.random() * codeSnippets.length)]
-    useStore.setState(randomSnippet)
-  }, [])
+      codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+    useStore.setState(randomSnippet);
+  }, []);
 
   useEffect(() => {
     if (store.autoDetectLanguage) {
-      const { language } = flourite(store.code, { noUnknown: true })
+      const { language } = flourite(store.code, { noUnknown: true });
       useStore.setState({
         language: language.toLowerCase() || "plaintext",
-      })
+      });
     }
-  }, [store.autoDetectLanguage, store.code])
+  }, [store.autoDetectLanguage, store.code]);
   return (
     <div
       className={cn(
-        "min-w-[400px] border-2 rounded-xl shadow-2xl",
+        "min-w-[400px] border-2 shadow-2xl",
         store.darkMode
           ? "bg-black/75 border-gray-600/40"
           : "bg-white/75 border-gray-200/20"
@@ -73,5 +73,5 @@ export default function CodeEditor() {
         />
       </div>
     </div>
-  )
+  );
 }
