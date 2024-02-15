@@ -92,7 +92,7 @@ function App() {
       </Resizable>
 
       <Card className="bottom-4 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur">
-        <CardContent className="flex flex-wrap gap-6 p-0">
+        <CardContent className="flex flex-wrap gap-6 p-0 pt-2 justify-center">
           <ThemeSelect />
           <LanguageSelect />
           <FontSelect />

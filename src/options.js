@@ -39,7 +39,7 @@ export const languages = {
   typescript: "TypeScript/TSX",
   xml: "XML",
   yaml: "YAML",
-}
+};
 
 export const themes = {
   hyper: {
@@ -93,7 +93,7 @@ export const themes = {
     theme:
       "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/ashes.min.css",
   },
-}
+};
 
 export const fonts = {
   jetBrainsMono: {
@@ -152,7 +152,7 @@ export const fonts = {
     name: "Red Hat Mono",
     src: "https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap",
   },
-}
+};
 
 export const codeSnippets = [
   {
@@ -195,4 +195,4 @@ export const codeSnippets = [
     language: "rust",
     code: 'fn main() {\n  let mut count = 0;\n  loop {\n    println!("Count: {}", count);\n    count += 1;\n    if count > 5 {\n      break;\n    }\n  }\n}',
   },
-]
+];
