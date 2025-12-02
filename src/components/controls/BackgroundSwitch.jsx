@@ -1,8 +1,8 @@
-import useStore from "@/store"
-import { Switch } from "../ui/switch"
+import useStore from "@/store";
+import { Switch } from "../ui/switch";
 
 export default function BackgroundSwitch() {
-  const showBg = useStore((state) => state.showBackground)
+  const showBg = useStore((state) => state.showBackground);
 
   return (
     <div>
@@ -17,5 +17,5 @@ export default function BackgroundSwitch() {
         className="my-1.5"
       />
     </div>
-  )
+  );
 }

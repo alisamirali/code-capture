@@ -1,21 +1,21 @@
+import { ResetIcon } from "@radix-ui/react-icons";
+import { Resizable } from "re-resizable";
 import { useEffect, useRef, useState } from "react";
 import CodeEditor from "./components/CodeEditor";
+import WidthMeasurement from "./components/WidthMeasurement";
+import BackgroundSwitch from "./components/controls/BackgroundSwitch";
+import DarkModeSwitch from "./components/controls/DarkModeSwitch";
+import ExportOptions from "./components/controls/ExportOptions";
+import FontSelect from "./components/controls/FontSelect";
+import FontSizeInput from "./components/controls/FontSizeInput";
+import LanguageSelect from "./components/controls/LanguageSelect";
+import PaddingSlider from "./components/controls/PaddingSlider";
+import ThemeSelect from "./components/controls/ThemeSelect";
+import { Button } from "./components/ui/button";
+import { Card, CardContent } from "./components/ui/card";
 import { cn } from "./lib/utils";
 import { fonts, themes } from "./options";
 import useStore from "./store";
-import { Card, CardContent } from "./components/ui/card";
-import ExportOptions from "./components/controls/ExportOptions";
-import ThemeSelect from "./components/controls/ThemeSelect";
-import LanguageSelect from "./components/controls/LanguageSelect";
-import FontSelect from "./components/controls/FontSelect";
-import FontSizeInput from "./components/controls/FontSizeInput";
-import PaddingSlider from "./components/controls/PaddingSlider";
-import BackgroundSwitch from "./components/controls/BackgroundSwitch";
-import DarkModeSwitch from "./components/controls/DarkModeSwitch";
-import { Resizable } from "re-resizable";
-import { Button } from "./components/ui/button";
-import { ResetIcon } from "@radix-ui/react-icons";
-import WidthMeasurement from "./components/WidthMeasurement";
 
 function App() {
   const [width, setWidth] = useState("auto");
@@ -56,42 +56,46 @@ function App() {
         crossOrigin="anonymous"
       />
 
-      <Resizable
-        enable={{ left: true, right: true }}
-        minWidth={padding * 2 + 200}
-        maxWidth={padding * 2 + 1000}
-        size={{ width }}
-        onResize={(e, dir, ref) => setWidth(ref.offsetWidth)}
-        onResizeStart={() => setShowWidth(true)}
-        onResizeStop={() => setShowWidth(false)}
-      >
-        <div
-          className={cn(
-            "overflow-hidden mb-2 transition-all ease-out",
-            showBackground ? themes[theme].background : "ring ring-neutral-900"
-          )}
-          style={{ padding }}
-          ref={editorRef}
+      <div className="px-4 md:px-0">
+        <Resizable
+          enable={{ left: true, right: true }}
+          minWidth={padding * 2 + 200}
+          maxWidth={padding * 2 + 1000}
+          size={{ width }}
+          onResize={(e, dir, ref) => setWidth(ref.offsetWidth)}
+          onResizeStart={() => setShowWidth(true)}
+          onResizeStop={() => setShowWidth(false)}
         >
-          <CodeEditor />
-        </div>
-        <WidthMeasurement showWidth={showWidth} width={width} />
-        <div
-          className={cn(
-            "transition-opacity w-fit mx-auto -mt-4",
-            showWidth || width === "auto"
-              ? "invisible opacity-0"
-              : "visible opacity-100"
-          )}
-        >
-          <Button size="sm" onClick={() => setWidth("auto")} variant="ghost">
-            <ResetIcon className="mr-2" />
-            Reset width
-          </Button>
-        </div>
-      </Resizable>
+          <div
+            className={cn(
+              "overflow-hidden mb-2 transition-all ease-out",
+              showBackground
+                ? themes[theme].background
+                : "ring ring-neutral-900"
+            )}
+            style={{ padding }}
+            ref={editorRef}
+          >
+            <CodeEditor />
+          </div>
+          <WidthMeasurement showWidth={showWidth} width={width} />
+          <div
+            className={cn(
+              "transition-opacity w-fit mx-auto -mt-4",
+              showWidth || width === "auto"
+                ? "invisible opacity-0"
+                : "visible opacity-100"
+            )}
+          >
+            <Button size="sm" onClick={() => setWidth("auto")} variant="ghost">
+              <ResetIcon className="mr-2" />
+              Reset width
+            </Button>
+          </div>
+        </Resizable>
+      </div>
 
-      <Card className="bottom-4 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur">
+      <Card className="fixed bottom-4 left-6 right-6 py-3 md:py-6 px-3 md:px-8 bg-neutral-900/90 backdrop-blur">
         <CardContent className="flex flex-wrap gap-6 p-0 pt-2 justify-center">
           <ThemeSelect />
           <LanguageSelect />
@@ -100,10 +104,12 @@ function App() {
           <PaddingSlider />
           <BackgroundSwitch />
           <DarkModeSwitch />
-          <div className="w-px bg-neutral-800" />
-          <div className="place-self-center">
+          <div className="w-px bg-neutral-800 hidden md:block" />
+
+          <div className="md:place-self-center place-self-end">
             <ExportOptions targetRef={editorRef} />
           </div>
+
           <div className="flex items-center justify-center w-full">
             <p className="bg-neutral-800 py-1 px-2 text-sm rounded-md">
               Made with ❤️ by{" "}

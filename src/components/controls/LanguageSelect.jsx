@@ -1,26 +1,26 @@
-import { languages, themes } from "@/options"
+import { languages } from "@/options";
+import useStore from "@/store";
+import { MagicWandIcon } from "@radix-ui/react-icons";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select"
-import { cn } from "@/lib/utils"
-import useStore from "@/store"
-import { MagicWandIcon } from "@radix-ui/react-icons"
+} from "../ui/select";
 
 export default function LanguageSelect() {
-  const language = useStore((state) => state.language)
-  const autoDetectLanguage = useStore((state) => state.autoDetectLanguage)
+  const language = useStore((state) => state.language);
+  const autoDetectLanguage = useStore((state) => state.autoDetectLanguage);
 
   const handleChange = (language) => {
     if (language === "auto-detect") {
-      useStore.setState({ autoDetectLanguage: true, language: "plaintext" })
+      useStore.setState({ autoDetectLanguage: true, language: "plaintext" });
     } else {
-      useStore.setState({ autoDetectLanguage: false, language })
+      useStore.setState({ autoDetectLanguage: false, language });
     }
-  }
+  };
+
   return (
     <div>
       <label className="block mb-2 text-xs font-medium text-neutral-400">
@@ -28,10 +28,10 @@ export default function LanguageSelect() {
       </label>
       <Select value={language} onValueChange={handleChange}>
         <SelectTrigger className="w-40">
-          {autoDetectLanguage && <MagicWandIcon className="mr-2" />}
+          {autoDetectLanguage && <MagicWandIcon />}
           <SelectValue placeholder="Select Language" />
         </SelectTrigger>
-        <SelectContent className="dark max-h-[500px]">
+        <SelectContent className="dark max-h-[500px] text-start">
           <SelectItem value="auto-detect">Auto Detect</SelectItem>
           {Object.entries(languages).map(([lang, name]) => (
             <SelectItem key={lang} value={lang}>
@@ -41,5 +41,5 @@ export default function LanguageSelect() {
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }

@@ -1,15 +1,15 @@
-import { fonts } from "@/options"
+import { fonts } from "@/options";
+import useStore from "@/store";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select"
-import useStore from "@/store"
+} from "../ui/select";
 
 export default function FontSelect() {
-  const fontStyle = useStore((state) => state.fontStyle)
+  const fontStyle = useStore((state) => state.fontStyle);
 
   return (
     <div>
@@ -32,5 +32,5 @@ export default function FontSelect() {
         </SelectContent>
       </Select>
     </div>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import useStore from "@/store"
-import { Input } from "../ui/input"
+import useStore from "@/store";
+import { Input } from "../ui/input";
 
 export default function FontSizeInput() {
-  const fontSize = useStore((state) => state.fontSize)
+  const fontSize = useStore((state) => state.fontSize);
 
   return (
     <div>
@@ -19,5 +19,5 @@ export default function FontSizeInput() {
         }
       />
     </div>
-  )
+  );
 }

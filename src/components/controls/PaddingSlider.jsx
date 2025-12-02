@@ -1,8 +1,8 @@
-import useStore from "@/store"
-import { Slider } from "../ui/slider"
+import useStore from "@/store";
+import { Slider } from "../ui/slider";
 
 export default function PaddingSlider() {
-  const padding = useStore((state) => state.padding)
+  const padding = useStore((state) => state.padding);
 
   return (
     <div>
@@ -17,5 +17,5 @@ export default function PaddingSlider() {
         step={8}
       />
     </div>
-  )
+  );
 }
